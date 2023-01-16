@@ -36,6 +36,11 @@ export const controllerDelUser = (res: ServerResponse, query: string) => {
       res.end(JSON.stringify({code: 404, message: "UserId not found"}));
       return;
     }
+    if (!uuidValidate(query)) {
+        res.writeHead(400);
+        res.end(JSON.stringify({code: 400, message: "userId is invalid"}));
+        return;
+    }
     const pos: number = findPosUser(query);
     if (pos === -1) {
         res.writeHead(404);
@@ -82,7 +87,7 @@ export const controllerPut = (req: IncomingMessage, res: ServerResponse, query: 
         }
         res.writeHead(200);
         updateUser(pos, user);
-        res.end(JSON.stringify({code: 200, message: "User update"}));
+        res.end(JSON.stringify(getOneUser(pos)));
     });
   } catch {
     res.writeHead(500);

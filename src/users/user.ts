@@ -24,8 +24,8 @@ export const deleteUser = (pos: number) => {
 
 export const isvalidUser = (user: User) => {
   try {
-    if(typeof user !== 'object' || !user.age || !user.hobbies || !user.username || 
-      typeof user.age !== 'number' || typeof user.username !== 'string' ||
+    if(typeof user !== "object" || !user.age || !user.hobbies || !user.username || 
+      typeof user.age !== "number" || typeof user.username !== "string" ||
       !Array.isArray(user.hobbies)) return 0;
     return 1;
   } catch {
