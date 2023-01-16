@@ -1,6 +1,8 @@
 import { routes } from "./routes.js";
 import http from "http";
+import * as dotenv from "dotenv";
 
+dotenv.config();
 const PORT = process.env.PORT || 4000;
 
 export const server = http.createServer(routes);
