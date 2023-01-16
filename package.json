@@ -5,10 +5,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start:dev": "npx nodemon",
-    "build": "npx tsc",
-    "start:prod": "npm run build && node dist/index",
-    "test": "jest  test/server.test.ts",
+    "start:dev": "nodemon",
+    "start:prod": "tsc && node dist/index",
+    "start:multi": "tsc && node dist/index cluster",
+    "test": "jest test/server.test.ts",
     "lint": "npx eslint ./src",
     "lint:fix": "npx eslint ./src --fix"
   },

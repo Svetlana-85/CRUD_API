@@ -4,7 +4,6 @@ import { User } from "./type";
 export const userList: Array<User> = [];
 
 export const getUsers = (): User[] => {
-  // throw new Error('Oops');
   return userList;
 }
 

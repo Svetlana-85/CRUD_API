@@ -25,7 +25,7 @@ export const controllerGet = (res: ServerResponse, query: string) => {
     res.end(JSON.stringify(getOneUser(pos)));
   } catch {
       showResponse(res, StatusCode.SERVER_ERROR, messageError.ServerError);
-    }
+  }
 }
 
 export const controllerDelUser = (res: ServerResponse, query: string) => {
