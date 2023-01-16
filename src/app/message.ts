@@ -1,6 +1,6 @@
 import { ServerResponse } from "http";
 
-export const showMessage404 = (res: ServerResponse): void => {
-    res.writeHead(404);
-    res.end(JSON.stringify({error:"Resource not found"}));
+export const showResponse = (res: ServerResponse, code: number, message: string): void => {
+    res.writeHead(code);
+    res.end(JSON.stringify({code: code, message: message}));
 }
